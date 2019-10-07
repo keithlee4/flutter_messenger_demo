@@ -11,7 +11,7 @@ install:
   - flutter --version
 script:
   - flutter packages get
-  - flutter analyze --no-pub --no-current-package lib/test/
+  - flutter analyze --no-pub --no-current-package test/
   - flutter test --no-pub test/
 cache:
   directories:
