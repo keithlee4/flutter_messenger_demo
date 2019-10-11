@@ -8,7 +8,6 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height = 100;
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     var textHeading = TextStyle(color: Palette.primaryTextColor, fontSize: 20);
     var textStyle = TextStyle(color: Palette.secondaryTextColor);
 

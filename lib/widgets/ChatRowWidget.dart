@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:messenger/config/Assets.dart';
 import 'package:messenger/config/Styles.dart';
+import 'package:intl/intl.dart';
 
 class ChatRowWidget extends StatelessWidget {
   @override
@@ -28,6 +29,21 @@ class ChatRowWidget extends StatelessWidget {
                       Text('What\'s up', style: Styles.subText)
                     ],
                   ),
+                )
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  DateFormat('kk:mm').format(
+                    DateTime.fromMillisecondsSinceEpoch(1565888474278)
+                  ),
+                  style: Styles.date
                 )
               ],
             ),
