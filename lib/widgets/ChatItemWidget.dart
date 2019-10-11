@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:messenger/config/Palette.dart';
 
 class ChatItemWidget extends StatelessWidget {
-  var index;
+  final int index;
   ChatItemWidget(this.index);
 
   @override
