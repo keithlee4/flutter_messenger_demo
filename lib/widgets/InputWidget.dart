@@ -15,8 +15,7 @@ class InputWidget extends StatelessWidget {
               child: new IconButton(
                 icon: new Icon(Icons.face),
                 color: Palette.primaryColor,
-                //TODO: onPressed is not determined
-                onPressed: null,
+                onPressed: () => {},
               ),
             ),
             color: Colors.white,

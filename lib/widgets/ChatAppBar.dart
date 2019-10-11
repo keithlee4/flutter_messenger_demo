@@ -4,6 +4,7 @@ import 'package:messenger/config/Palette.dart';
 import 'package:messenger/config/Assets.dart';
 
 class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const ChatAppBar();
   final double height = 100;
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,7 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Text('Keith Lee', style: textHeading),
-                                  Text('@keithlee4', style: textStyle)
+                                  // Text('@keithlee4', style: textStyle)
                                 ],
                               ),
                             ),

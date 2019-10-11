@@ -8,11 +8,8 @@ class Messenger extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return MaterialApp(
       title: 'Messenger',
-      theme: CupertinoThemeData(
-        primaryColor: Colors.blue
-      ),
       home: ConversationPageList(),
     );
   }

@@ -7,19 +7,24 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:messenger/pages/ConversationPage.dart';
-import 'package:messenger/pages/ConversationPageList.dart';
+// import 'package:messenger/pages/ConversationPage.dart';
+import 'package:messenger/widgets/ChatAppBar.dart';
+// import 'package:messenger/widgets/ChatListWidget.dart';
+// import 'package:messenger/widgets/InputWidget.dart';
+// import 'package:messenger/pages/ConversationPageList.dart';
 
 void main() {
   const MaterialApp app = MaterialApp(
     home: Scaffold(
-      body: ConversationPageList(),
+      body: const ChatAppBar()
     ),
   );
 
-  testWidgets('ConversationPageList UI Test', (WidgetTester tester) async {
+  testWidgets('ChatAppBar UI Test', (WidgetTester tester) async {
     await tester.pumpWidget(app);
-    expect(find.byType(ConversationPage), findsOneWidget);
-    expect(find.byType(PageView), findsOneWidget);
+    expect(find.text('Keith Lee'), findsOneWidget);
+    // expect(find.text('@keithlee4'), findsOneWidget);
+    expect(find.byType(Icon), findsNWidgets(1));
+    expect(find.byType(CircleAvatar), findsOneWidget);
   });
 }
