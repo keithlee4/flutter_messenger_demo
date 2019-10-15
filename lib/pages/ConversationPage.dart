@@ -26,7 +26,7 @@ class _ConversationPageState extends State<ConversationPage> {
               GestureDetector(
                 child: InputWidget(),
                 onPanUpdate: (details) {
-                  if (details.delta.dy > 0) {
+                  if (details.delta.dy < 0) {
                     //swiping up
                     _scaffoldKey.currentState.showBottomSheet(
                       (BuildContext context) {
