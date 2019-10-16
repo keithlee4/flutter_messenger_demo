@@ -14,4 +14,13 @@ class Palette{
   static Color otherMessageColor = Color(0xff3f3f3f);
   static Color greyColor = Colors.grey;
   static Color chatBackgroundColor = Color(0xfffafafa);
+
+  static Color primaryTextColorLight = Colors.white;
+  static Color secondaryTextColorLight = Colors.white70;
+  static Color hintTextColorLight = Colors.white70;
+
+  static Color gradientStartColor = accentColor;
+  static Color gradientEndColor = Color(0xff6aa8fd);
+  static Color errorGradientStartColor = Color(0xffd50000);
+  static Color errorGradientEndColor = Color(0xff9b0000);
 } 

@@ -7,24 +7,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-// import 'package:messenger/pages/ConversationPage.dart';
-import 'package:messenger/widgets/ChatAppBar.dart';
-// import 'package:messenger/widgets/ChatListWidget.dart';
-// import 'package:messenger/widgets/InputWidget.dart';
-// import 'package:messenger/pages/ConversationPageList.dart';
+import 'package:messenger/main.dart';
+import 'package:messenger/pages/Register/RegisterPage.dart';
+
 
 void main() {
-  const MaterialApp app = MaterialApp(
-    home: Scaffold(
-      body: const ChatAppBar()
-    ),
-  );
-
-  testWidgets('ChatAppBar UI Test', (WidgetTester tester) async {
-    await tester.pumpWidget(app);
-    expect(find.text('Keith Lee'), findsOneWidget);
-    // expect(find.text('@keithlee4'), findsOneWidget);
-    expect(find.byType(Icon), findsNWidgets(1));
-    expect(find.byType(CircleAvatar), findsOneWidget);
+  testWidgets('Main UI Test', (WidgetTester tester) async {
+    await tester.pumpWidget(Messenger());
+    expect(find.byType(RegisterPage), findsOneWidget);
   });
 }

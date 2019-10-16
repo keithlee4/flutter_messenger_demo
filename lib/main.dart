@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:messenger/pages/ConversationPageSlide.dart';
+import 'package:messenger/pages/Register/RegisterPage.dart';
 
 void main() => runApp(Messenger());
 
@@ -10,7 +10,8 @@ class Messenger extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Messenger',
-      home: ConversationPageSlide(),
+      debugShowCheckedModeBanner: false,
+      home: RegisterPage(),
     );
   }
 }
