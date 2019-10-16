@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:messenger/pages/ConversationBottomSheet.dart';
+import 'package:messenger/config/Palette.dart';
 import 'package:messenger/widgets/ChatAppBar.dart';
 import 'package:messenger/widgets/ChatListWidget.dart';
-import 'package:messenger/widgets/InputWidget.dart';
 
 class ConversationPage extends StatefulWidget {
   const ConversationPage();
@@ -12,34 +11,19 @@ class ConversationPage extends StatefulWidget {
 }
 
 class _ConversationPageState extends State<ConversationPage> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        key: _scaffoldKey,
-        appBar: ChatAppBar(),
-        body: Stack(children: <Widget>[
-          Column(
-            children: <Widget>[
-              ChatListWidget(), 
-              GestureDetector(
-                child: InputWidget(),
-                onPanUpdate: (details) {
-                  if (details.delta.dy < 0) {
-                    //swiping up
-                    _scaffoldKey.currentState.showBottomSheet(
-                      (BuildContext context) {
-                        return ConversationBottomSheet();
-                      }
-                    );
-                  }
-                },
-              )
-            ],
-          )]
-        ),
-      ),
+    return Column(
+      children: <Widget>[
+        Expanded(flex: 2, child: ChatAppBar()),
+        Expanded(
+          flex: 11,
+          child: Container(
+            color: Palette.chatBackgroundColor,
+            child: ChatListWidget(),
+          ),
+        )
+      ],
     );
   }
 }
