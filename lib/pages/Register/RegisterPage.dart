@@ -235,6 +235,7 @@ class _RegisterPageState extends State<RegisterPage>
               child: TextField(
                 textAlign: TextAlign.center,
                 style: Styles.subHeadingLight,
+                focusNode: usernameFocusNode,
                 decoration: InputDecoration(
                     hintText: '@username',
                     hintStyle: Styles.hintTextLight,

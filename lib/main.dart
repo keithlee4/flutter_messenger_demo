@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:messenger/config/Palette.dart';
 import 'package:messenger/pages/Register/RegisterPage.dart';
 
 void main() => runApp(Messenger());
@@ -11,6 +12,9 @@ class Messenger extends StatelessWidget {
     return MaterialApp(
       title: 'Messenger',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Palette.primaryColor
+      ),
       home: RegisterPage(),
     );
   }
