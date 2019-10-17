@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "768235493324",
+    "firebase_url": "https://messenger-flutter-973a1.firebaseio.com",
+    "project_id": "messenger-flutter-973a1",
+    "storage_bucket": "messenger-flutter-973a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768235493324:android:3db288003b2056101faf69",
+        "android_client_info": {
+          "package_name": "com.keithlee4.messenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768235493324-p21josnjlosbismehdogtegirgo1a9mp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm-Jm11C7juC3vYPRo8TM2r6EarO9iYJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768235493324-p21josnjlosbismehdogtegirgo1a9mp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "768235493324-uc08ecj9i2doorjv0q4fg2sskt7jgku7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.keithlee4.messenger"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
