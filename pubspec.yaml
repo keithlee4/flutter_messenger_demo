@@ -26,12 +26,12 @@ dependencies:
   intl: ^0.16.0
   rubber: ^0.4.0
   numberpicker: ^1.1.0
-  firebase_auth: ^0.14.0+4 #to auth with firebase
+  firebase_auth: ^0.14.0+5 #to auth with firebase
   google_sign_in: ^4.0.7 #to auth with google account
-  flutter_bloc: ^0.21.0 #helps in implementing blocs
-  equatable: ^0.6.0 #helps in comparing class using their values
-  cloud_firestore: ^0.12.9+1 #Firebase Database
-  image_picker: ^0.6.1+4 #image picker used for picking images from gallery
+  flutter_bloc: ^0.22.1 #helps in implementing blocs
+  equatable: ^0.6.1 #helps in comparing class using their values
+  cloud_firestore: ^0.12.9+5 #Firebase Database
+  image_picker: ^0.6.1+8 #image picker used for picking images from gallery
   firebase_storage: ^3.0.6 #storage for storing image files
 
 dev_dependencies:
@@ -61,6 +61,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+module:
+  androidX: true 
   # To add assets to your application, add an assets section, like this:
   
 

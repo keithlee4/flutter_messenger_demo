@@ -70,7 +70,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
           yield ProfileUpdated();
         }else {
           yield Authenticated(user);
-          dispatch(LoggedIn(user));
+          add(LoggedIn(user));
         }
       }else {
         yield UnAuthenticated();
@@ -92,7 +92,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
         yield ProfileUpdated();
       }else {
         yield Authenticated(firebaseUser);
-        dispatch(LoggedIn(firebaseUser));
+        add(LoggedIn(firebaseUser));
       }
     } catch (_, stacktrace) {
       print(stacktrace);

@@ -1,4 +1,4 @@
-package com.example.messenger
+package com.keithlee4.messenger
 
 import android.os.Bundle
 
