@@ -33,6 +33,7 @@ dependencies:
   cloud_firestore: ^0.12.9+5 #Firebase Database
   image_picker: ^0.6.1+8 #image picker used for picking images from gallery
   firebase_storage: ^3.0.6 #storage for storing image files
+  mockito: ^4.1.1
 
 dev_dependencies:
   flutter_test:

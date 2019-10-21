@@ -26,9 +26,10 @@ abstract class BaseStorageProvider {
 
 //AuthenticationProvider
 class AuthenticationProvider extends BaseAuthenticationProvider {
-  final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-  final GoogleSignIn googleSignIn = GoogleSignIn();
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  GoogleSignIn googleSignIn = GoogleSignIn();
 
+  AuthenticationProvider({this.firebaseAuth, this.googleSignIn});
   @override
   Future<FirebaseUser> signInWithGoogle() async {
     final GoogleSignInAccount account = await googleSignIn.signIn();
@@ -61,7 +62,8 @@ class AuthenticationProvider extends BaseAuthenticationProvider {
 
 //UserDatProvider
 class UserDataProvider extends BaseUserDataProvider {
-  final fireStoreDb = Firestore.instance;
+  Firestore fireStoreDb = Firestore.instance;
+  UserDataProvider({this.fireStoreDb});
   @override
   Future<User> saveDetailsFromGoogleAuth(FirebaseUser user) async {
     DocumentReference ref = fireStoreDb.collection(Paths.usersPath).document(user.uid);
@@ -86,7 +88,7 @@ class UserDataProvider extends BaseUserDataProvider {
   Future<User> saveProfileDetails(String uid, String profileImageUrl, int age, String username) async {
     DocumentReference ref = fireStoreDb.collection(Paths.usersPath).document(uid);
     var data = {
-      'phoptoUrl' : profileImageUrl,
+      'photoUrl' : profileImageUrl,
       'age' : age,
       'username' : username
     };
@@ -100,7 +102,8 @@ class UserDataProvider extends BaseUserDataProvider {
   Future<bool> isProfileComplete(String uid) async {
     DocumentReference ref = fireStoreDb.collection(Paths.usersPath).document(uid);
     final DocumentSnapshot currentDocument = await ref.get();
-    return  currentDocument.exists && 
+    return  currentDocument != null &&
+            currentDocument.exists && 
             currentDocument.data.containsKey('age') &&
             currentDocument.data.containsKey('username');
   }
@@ -108,7 +111,8 @@ class UserDataProvider extends BaseUserDataProvider {
 
 //StorageProvider
 class StorageProvider extends BaseStorageProvider {
-  final FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+  FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+  StorageProvider({this.firebaseStorage});
   @override
   Future<String> uploadImage(File file, String path) async {
     StorageReference reference = firebaseStorage.ref().child(path);
