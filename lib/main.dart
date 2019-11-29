@@ -21,7 +21,8 @@ void main() {
         storageRepository: storageRepository
       )
       ..add(AppLaunched()),
-      child: Messenger(),
+      child: Messenger(), 
+      create: (BuildContext context) {},
     )
   );
 }
