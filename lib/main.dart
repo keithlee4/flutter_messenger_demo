@@ -6,6 +6,7 @@ import 'package:messenger/blocs/repository/AuthenticationRepository.dart';
 import 'package:messenger/blocs/repository/StorageRepository.dart';
 import 'package:messenger/blocs/repository/UserDataRepository.dart';
 import 'package:messenger/config/Palette.dart';
+import 'package:messenger/pages/ContactListPage.dart';
 import 'package:messenger/pages/ConversationPageSlide.dart';
 import 'package:messenger/pages/Register/RegisterPage.dart';
 
@@ -15,14 +16,13 @@ void main() {
   final StorageRepository storageRepository = StorageRepository();
   runApp(
     BlocProvider(
-      builder: (context) => AuthenticationBloc(
+      create: (context) => AuthenticationBloc(
         authenticationRepository: authenticationRepository,
         userDataRepository: userDataRepository,
         storageRepository: storageRepository
       )
       ..add(AppLaunched()),
-      child: Messenger(), 
-      create: (BuildContext context) {},
+      child: Messenger()
     )
   );
 }
@@ -39,13 +39,14 @@ class Messenger extends StatelessWidget {
       ),
       home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
         builder: (context, state) {
-          if (state is UnAuthenticated) {
-            return RegisterPage();
-          }else if (state is ProfileUpdated) {
-            return ConversationPageSlide();
-          } else {
-            return RegisterPage();
-          }
+          return ContactListPage();
+          // if (state is UnAuthenticated) {
+          //   return RegisterPage();
+          // }else if (state is ProfileUpdated) {
+          //   return ConversationPageSlide();
+          // } else {
+          //   return RegisterPage();
+          // }
         },
       ),
     );

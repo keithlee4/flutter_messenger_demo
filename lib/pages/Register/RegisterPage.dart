@@ -102,20 +102,20 @@ class _RegisterPageState extends State<RegisterPage>
         resizeToAvoidBottomPadding:
             false, //avoids the bottom overflow warning when keyboard is shown
         body: SafeArea(
-            child: Stack(
-          children: <Widget>[
-            buildHome(),
-            BlocBuilder<AuthenticationBloc, AuthenticationState>(
-              builder: (context, state) {
-                if (state is AuthInProgress ||
-                    state is ProfileUpdateInProgress) {
-                  return buildCircularProgressBarWidget();
-                } else {
-                  return SizedBox();
-                }
-              },
-            )
-          ],
+          child: Stack(
+            children: <Widget>[
+              buildHome(),
+              BlocBuilder<AuthenticationBloc, AuthenticationState>(
+                builder: (context, state) {
+                  if (state is AuthInProgress ||
+                      state is ProfileUpdateInProgress) {
+                    return buildCircularProgressBarWidget();
+                  } else {
+                    return SizedBox();
+                  }
+                },
+              )
+            ],
         )),
       ),
     );
