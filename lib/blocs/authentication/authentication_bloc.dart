@@ -65,7 +65,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
       final isSignedIn = await authenticationRepository.isLoggedIn();
       if (isSignedIn) {
         final user = await authenticationRepository.getCurrentUser();
-        bool isProfileComplete = await userDataRepository.isProfileComplete(user.uid);
+        bool isProfileComplete = await userDataRepository.isProfileComplete();
         if (isProfileComplete) {
           yield ProfileUpdated();
         }else {
@@ -86,7 +86,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     try {
       //Might raise some exception while logging in
       FirebaseUser firebaseUser = await authenticationRepository.signInWithGoogle();
-      bool isProfileComplete = await userDataRepository.isProfileComplete(firebaseUser.uid);
+      bool isProfileComplete = await userDataRepository.isProfileComplete();
       print(isProfileComplete);
       if (isProfileComplete) {
         yield ProfileUpdated();
@@ -109,8 +109,8 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
   Stream<AuthenticationState> mapSaveProfileToState(File profileImage, int age, String username) async* {
     yield ProfileUpdateInProgress();
     String profilePictureUrl = await storageRepository.uploadImage(profileImage, Paths.profilePicturePath);
-    FirebaseUser user = await authenticationRepository.getCurrentUser();
-    await userDataRepository.saveProfileDetails(user.uid, profilePictureUrl, age, username);
+    // FirebaseUser user = await authenticationRepository.getCurrentUser();
+    await userDataRepository.saveProfileDetails(profilePictureUrl, age, username);
     yield ProfileUpdated();
   }
 

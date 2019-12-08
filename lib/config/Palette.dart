@@ -17,6 +17,7 @@ class Palette{
 
   static Color primaryTextColorLight = Colors.white;
   static Color secondaryTextColorLight = Colors.white70;
+  static Color hintTextColor = Colors.black54;
   static Color hintTextColorLight = Colors.white70;
 
   static Color gradientStartColor = accentColor;

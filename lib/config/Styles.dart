@@ -17,8 +17,9 @@ class Styles {
       TextStyle(color: Palette.primaryTextColor, fontSize: 14);
   static TextStyle subHeadingLight =
       TextStyle(color: Palette.primaryTextColorLight, fontSize: 14);
+  static TextStyle hintText = TextStyle(color: Palette.hintTextColor);
   static TextStyle hintTextLight =
-      TextStyle(color: Palette.secondaryTextColorLight);
+      TextStyle(color: Palette.hintTextColorLight);
   static TextStyle text = TextStyle(color: Palette.secondaryTextColor);
   static TextStyle textLight =
       TextStyle(color: Palette.secondaryTextColorLight);

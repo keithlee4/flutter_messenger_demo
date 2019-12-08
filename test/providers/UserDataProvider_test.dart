@@ -53,7 +53,7 @@ void main() {
       when(fireStore.collection(any)).thenReturn(collectionReference);
       when(collectionReference.document(any)).thenReturn(documentReference);
       expect(await documentReference.snapshots().isEmpty, true);
-      User user = await userDataProvider.saveProfileDetails('uid', 'http://www.github.com', 18, 'keithlee4');
+      User user = await userDataProvider.saveProfileDetails('http://www.github.com', 18, 'keithlee4');
       expect(await documentReference.snapshots().isEmpty, false);
       expect(user.age, 18);
       expect(user.username, 'keithlee4');
@@ -68,7 +68,7 @@ void main() {
       when(collectionReference.document(any)).thenReturn(documentReference);
       when(documentSnapshot.exists).thenReturn(true);
       expect(await documentReference.snapshots().isEmpty, false);
-      expect(await userDataProvider.isProfileComplete('uid'), true);
+      expect(await userDataProvider.isProfileComplete(), true);
 
       //clear profile data, shuodl return false now
       documentReference = DocumentReferenceMock();
@@ -76,7 +76,7 @@ void main() {
       when(collectionReference.document(any)).thenReturn(documentReference);
       when(documentSnapshot.exists).thenReturn(true);
       expect(await documentReference.snapshots().isEmpty, true);
-      expect(await userDataProvider.isProfileComplete('uid'), false);
+      expect(await userDataProvider.isProfileComplete(), false);
     });
   });
 }
